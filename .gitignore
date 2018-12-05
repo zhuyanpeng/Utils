@@ -10,8 +10,8 @@ target/
 .settings/
 .project
 .classpath
-.mvn/
-mvnw*
+/*/.mvn/
+/*/mvnw*
 
 # idea ignore
 .idea/
