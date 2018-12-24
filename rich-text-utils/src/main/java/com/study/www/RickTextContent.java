@@ -300,11 +300,11 @@ class UploadPicLocal implements Runnable{
             con.setConnectTimeout(5*1000);
             // 输入流
             InputStream is = con.getInputStream();
-            // 1K的数据缓冲
+            // 2K的数据缓冲
             byte[] bs = new byte[1024*2];
             // 读取到的数据长度
             int len;
-            // 输出的文件流
+            // 文件创建
             File sf=new File(savePath);
             if (!sf.getParentFile().exists()) {
                 sf.getParentFile().mkdirs();
@@ -315,7 +315,6 @@ class UploadPicLocal implements Runnable{
                 os.write(bs, 0, len);
             }
             // 完毕，关闭所有链接
-            os.close();
             is.close();
         } catch (IOException e) {
             e.printStackTrace();
